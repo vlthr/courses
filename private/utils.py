@@ -166,6 +166,9 @@ def save_array(fname, arr):
     c=bcolz.carray(arr, rootdir=fname, mode='w')
     c.flush()
 
+def append_array(fname, arr):
+    c=bcolz.carray(arr, rootdir=fname, mode='a')
+    c.flush()
 
 def load_array(fname):
     return bcolz.open(fname)[:]
